@@ -32,5 +32,5 @@ plot2 <- function ()
 	
 	## Closing the device
 	dev.off()
-	return
+	return()
  }

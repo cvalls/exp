@@ -53,9 +53,9 @@ plot3 <- function (filteredData)
 	## difficuly if this graps is in the legend. first we need a line so we'll use a lty = 1
 	## Now The problem is how to avoid the point mixed with the line.
 	## I couldn't find how to hide the point asking saint google, so It seems it is not possible to hide the point.
-	## But a work aroud and possible solution is a little bit tricky. Using pch = 46 set the point size to one pixel.
+	## But a work aroud and possible solution is a little bit tricky. 
 	## The effect we've got is to have a single pixel over the legend line. Using merge, only can move the point 
-	## to the right so it is not a solution. Now setting line width to 2 pixels (lwd = 2), 
+	## to the right so it is not a solution. Now setting line width to 1 pixels (lwd = 1), 
 	## every line covers completly that non desired pixel and shows a continuos line, as is asked
 
 	## this is a pure line plot. So we need to avoid scatters
@@ -63,7 +63,7 @@ plot3 <- function (filteredData)
 		lines(dttm, filteredData$Sub_metering_1, col = "black") 
 		lines(dttm, filteredData$Sub_metering_2, col = "red") 
 		lines(dttm, filteredData$Sub_metering_3, col = "blue") 
-		legend("topright", bty= "n", lwd = 2, pch = 46, lty = 1, col = c("black", "red", "blue"), 
+		legend("topright", bty= "n", lwd = c(1,1,1),  lty = c(1,1,1), col = c("black", "red", "blue"), cex = 0.65,
 		legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))})
 	
  
@@ -99,6 +99,6 @@ plot4 <- function (filteredData)
 	
 	## Closing the device
 	dev.off()
-	return
+	return()
  }
  
